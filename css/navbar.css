@@ -1,0 +1,152 @@
+html {
+    --c: #2599e6;
+		--cLogo: #1653ae;
+		--cFont: #0f181d;
+}
+header {
+	background-color: #FFFFFF;
+	top: 0;
+	width: 100%;
+	position: fixed;
+	border-bottom: solid 5px var(--c);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+a {
+	color: var(--c);
+}
+.navbar {
+	display: flex;
+	width: 1180px;
+	margin: 0 auto;
+	padding: 15px 0;
+	transition: all 0.2s;
+}
+
+.collapse {
+	display: flex;
+	flex-grow: 1;
+}
+
+.links ul {
+	display: flex;
+	margin-right: auto;
+}
+
+.links li {
+	margin: 0 10px;
+}
+
+.links a {
+	color: var(--cFont);
+}
+
+.links a:hover {
+	color: var(--c);
+	font-weight: bold;
+}
+
+.logo {
+	color: var(--cLogo);
+	font-weight: bold;
+	margin-right: 20px;
+	font-size: 18px;
+}
+
+.form {
+	color: var(--c);
+}
+.form a {
+	border: solid 1px var(--c);
+	border-radius: 8px;
+	padding: 4px 14px;
+}
+
+.form-bg {
+	background-color: var(--c);
+	color: #FFFFFF;
+}
+
+.navbar label {
+	display: none;
+}
+
+.navbar input {
+	display: none;
+}
+
+@media only screen and (max-width: 960px) {
+	.navbar {
+		flex-flow: row wrap;
+	}
+	.navbar .close{
+		padding-bottom: 210px;
+		transition: all 0.2s;
+	}
+	.collapse,
+	.form {
+		position: absolute;
+		top: -200px;
+		opacity: 0;
+		flex-flow: column;
+		width: 100%;
+		margin: 8px 0;
+	}
+
+	.navbar label {
+		cursor: pointer;
+	}
+	.navbar label #but-div{
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		width: 30px;
+		height: 25px;
+	}
+	.navbar label #but-div span{
+		display: block;
+  		height: 5px;
+  		width: 100%;
+  		background-color: var(--c);;
+  		transition: all 0.2s;
+	}
+	.navbar label .close span:first-child {
+		transform: translateY(10px) rotate(45deg);
+		transition: all 0.2s;
+	  }
+	  .navbar label .close span:nth-child(2) {
+		opacity: 0;
+		transition: all 0.2s ;
+	  }
+	  .navbar label .close span:last-child {
+		transform: translateY(-10px) rotate(-45deg);
+		transition: all 0.2s ;
+	  }
+	.logo {
+		margin-right: auto;
+	}
+
+	.links ul {
+		flex-direction: column;
+		margin: 8px, 0;
+	}
+
+	.links ul li {
+		margin: 8px 0;
+	}
+
+	.navbar label {
+		display: block;
+	}
+
+	#check:checked~.collapse {
+		top: 40px;
+		opacity: 1;
+		transition: all 0.2s;
+	}
+
+	#check:checked~.form {
+		top: 200px;
+		opacity: 1;
+		transition: all 0.2s;
+	}
+}
